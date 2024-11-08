@@ -19,6 +19,7 @@ end
 target 'App' do
   capacitor_pods
   # Add your Pods here
+  pod 'Mapbox-iOS-SDK', '~> 6.3.0'
 end
 
 post_install do |installer|

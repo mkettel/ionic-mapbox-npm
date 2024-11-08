@@ -27,6 +27,10 @@
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need your location to show you on the map</string>
+	<key>MGLMapboxAccessToken</key>
+	<string>pk.eyJ1IjoibWtldHRlbGthbXAiLCJhIjoiY2xhaXljbjZ3MDQ0NDN2bndzZnJrc3FxMyJ9.LEl_hT5f2QSxqw2LTf03lQ</string>
 	<array>
 		<string>armv7</string>
 	</array>

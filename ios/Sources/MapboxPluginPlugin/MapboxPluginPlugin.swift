@@ -1,23 +1,11 @@
 import Foundation
-import Capacitor
 
-/**
- * Please read the Capacitor iOS Plugin Development Guide
- * here: https://capacitorjs.com/docs/plugins/ios
- */
-@objc(MapboxPluginPlugin)
-public class MapboxPluginPlugin: CAPPlugin, CAPBridgedPlugin {
-    public let identifier = "MapboxPluginPlugin"
-    public let jsName = "MapboxPlugin"
-    public let pluginMethods: [CAPPluginMethod] = [
-        CAPPluginMethod(name: "echo", returnType: CAPPluginReturnPromise)
-    ]
-    private let implementation = MapboxPlugin()
-
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
-        call.resolve([
-            "value": implementation.echo(value)
-        ])
+@objc(MapboxPlugin)
+public class MapboxPlugin: NSObject {
+    @objc public func register(with registrar: CAPPluginRegistrar) {
+        let channel = CAPPluginCall(pluginId: "MapboxPlugin",
+                                  methodName: "initialize",
+                                  arguments: [:])
+        registrar.register(channel)
     }
 }
